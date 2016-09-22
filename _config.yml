@@ -2,5 +2,5 @@ markdown: redcarpet
 paginate: 4
 #baseurl: http://houssem.com/
 
-gems:
- - jekyll-sitemap
+#gems:
+# - jekyll-sitemap
