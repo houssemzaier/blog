@@ -1,22 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    <link rel="canonical" href="{{page.url | prepend: site.url}}" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{page.description}}">
+    {% if page.author %}
+    <meta name="author" content="{{page.author}}">
+    {% endif %}
+    {% if page.coverImg %}
+    <meta property="og:image" content="{{page.coverImg | prepend: site.url}}" />
+    {% endif %}
 
-    <title>HZ Blog</title>
+    <title>{{page.title}}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/clean-blog.css" rel="stylesheet">
+    <link href="{{ site.url }}/css/clean-blog.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,22 +36,32 @@
 
 </head>
 
-
 <body>
 
     <!-- Navigation -->
-        {% include nav.html %}
+    {% include nav.html %}
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <header class="intro-header" style="background-image: url('{{ site.url }}/img/{{page.coverImg}}')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>HZ Blog</h1>
+                        <h1>{{page.title}}</h1>
                         <hr class="small">
-                        <span class="subheading">it's all about personal projects, tips & tricks and some tutorials</span>
+                        
+                        {% if page.author %}
+                            <h2 class="subheading">{{page.description}}</h2>
+                            <span class="meta">Posted by <a href="#">{{page.author}}</a> on {{page.date | date_to_string}}</span>
+                        {% else %}
+                            <span class="subheading">{{page.description}}</span>
+                        {% endif %}
+
+                        <aside class="sharing">
+                        <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+                        </aside>
+
                     </div>
                 </div>
             </div>

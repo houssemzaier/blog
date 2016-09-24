@@ -1,6 +1,8 @@
 markdown: redcarpet
-paginate: 4
-#baseurl: http://houssem.com/
 
-#gems:
-# - jekyll-sitemap
+paginate: 4
+#baseurl: http://hz-blog.com/
+
+gems:
+ - jekyll-sitemap
+ - jekyll-paginate
