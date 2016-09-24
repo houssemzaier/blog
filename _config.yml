@@ -1,4 +1,4 @@
-markdown: redcarpet
+markdown: kramdown
 
 paginate: 4
 #baseurl: http://hz-blog.com/
