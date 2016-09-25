@@ -58,8 +58,8 @@ hr.small {
   letter-spacing: 1px;
 }
 .selected {
-  color: #80D222 !important;
-}
+  color: #98FB98 !important;
+ }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
     background: transparent;
